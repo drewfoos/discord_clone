@@ -32,7 +32,7 @@ model Server {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   name       String
   imageUrl   String
-  inviteCode String
+  inviteCode String @unique
   
   profileId  String   @db.ObjectId // Updated to match Profile.id
   profile    Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
