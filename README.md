@@ -40,7 +40,7 @@ A step-by-step series of examples that tell you how to get a development environ
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/yourusername/discord-clone.git
+git clone https://github.com/drewfoos/discord-clone.git
 ```
 
 2. Install NPM packages:
@@ -51,12 +51,26 @@ npm install
 ```
 
 3. Setup your environment variables:
-   - Create a `.env.local` file in the root directory.
+   - Create a `.env` file in the root directory.
    - Add the following lines:
 
 ```env
-DATABASE_URL="your-database-url"
-NEXT_PUBLIC_CLERK_FRONTEND_API="your-clerk-frontend-api-key"
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=apkey
+CLERK_SECRET_KEY=key
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+DATABASE_URL=url
+
+UPLOADTHING_SECRET=key
+UPLOADTHING_APP_ID=key
+```
+
+3. Generate prisma:
+
+```bash
+npx prisma generate
 ```
 
 4. Run the development server:
